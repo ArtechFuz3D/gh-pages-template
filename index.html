@@ -1,76 +1,106 @@
-<!doctype html>
-<link rel="stylesheet" href="assets/style.css" />
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>GH Pages Starter Template</title>
 
-<!-- Prefered font (self-host or via link) -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- SEO -->
+  <meta name="description" content="Modern GitHub Pages starter with dark/light mode, modular UI, parallax hero, analytics, and one-click deploy.">
+  <link rel="canonical" href="https://artechfuz3d.github.io/gh-pages-template/" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="GH Pages Starter Template" />
+  <meta property="og:description" content="Deploy a modern GitHub Pages site with one click." />
+  <meta property="og:url" content="https://artechfuz3d.github.io/gh-pages-template/" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:type" content="website" />
 
-<!-- Analytics placeholder (uncomment & add your ID) -->
-<!-- Global site tag (gtag.js) - Google Analytics
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments)}
-gtag('js', new Date());
-gtag('config', 'GA_MEASUREMENT_ID');
-</script>
--->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/og-image.png" />
 
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
-<!-- App root -->
-<div id="app">
-<!-- Navbar injected here -->
-<header id="site-header"></header>
+
+  <!-- ░█▀█░█▀█░█░░░█▀█░▀█▀░█▀█░█▀▀ -->
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">🚀 GH Pages Template</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#setup">Setup</a>
+      <a href="#footer">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </nav>
 
 
-<!-- Hero -->
-<section id="hero" class="hero">
-<div class="hero-inner">
-<h1 id="hero-title">Build fast — deploy instantly</h1>
-<p id="hero-sub">A lightweight GitHub Pages starter with dark/light theme, modular components, and a modern hero.</p>
-<div class="hero-cta">
-<a class="btn primary" id="use-template" href="https://github.com/ArtechFuz3D/gh-pages-template/generate" target="_blank" rel="noopener noreferrer">Use this template</a>
-<button class="btn" id="deploy-modal-open">How to deploy</button>
-</div>
-</div>
-<div class="hero-decor" aria-hidden="true"></div>
-</section>
+  <!-- ░█░█░▀█▀░█▀█░█▀▀░▀█▀░█▀█░█░░ -->
+  <!-- Hero -->
+  <header class="hero" data-parallax>
+    <div class="hero-content">
+      <h1>Build. Deploy. Customize.</h1>
+      <p>A clean GitHub Pages starter with theme toggle, modular components, analytics & SEO automation.</p>
+      
+      <a href="https://github.com/new?template_name=gh-pages-template&template_owner=ArtechFuz3D&name=my-site"
+         class="btn primary" target="_blank">
+         ✨ Deploy Your Own
+      </a>
+
+      <a href="#features" class="btn secondary">↓ Learn More</a>
+    </div>
+  </header>
 
 
-<!-- Main content (sections injected) -->
-<main id="main-content" class="container">
-<!-- Sections are inserted by JS. See assets/script.js for the modular components and how to add more. -->
-</main>
+  <!-- ░█▀█░█▀▀░█░█░█▀▀░▀█▀░█▀▀░█▀█ -->
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <h2>Features</h2>
+    <ul class="feature-list">
+      <li>🌙 Dark / Light Mode</li>
+      <li>🧱 Modular Component Layout</li>
+      <li>⚡ Zero Build System — Pure HTML/CSS/JS</li>
+      <li>📈 Analytics & SEO Ready</li>
+      <li>🌄 Animated Parallax Hero</li>
+      <li>🚀 One-Click Deploy Button</li>
+    </ul>
+  </section>
 
 
-<!-- Footer injected here -->
-<footer id="site-footer"></footer>
+  <!-- ░█▀█░█▀▀░█▄█░█▀█░█▄█ -->
+  <!-- Getting Started -->
+  <section id="setup" class="section alt">
+    <h2>Getting Started</h2>
+    <ol>
+      <li>Click <strong>“Deploy Your Own”</strong></li>
+      <li>Name your repo</li>
+      <li>Go to <strong>Settings → Pages</strong></li>
+      <li>Enable <strong>Main Branch</strong></li>
+    </ol>
+  </section>
 
 
-</div>
+  <!-- ░█▀█░█▀▀░█▀▀░█▀█░█▀▀░▀█▀ -->
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <p>© <span id="year"></span> GH Pages Starter — Built by ArtechFuz3D</p>
+  </footer>
 
 
-<!-- Deploy modal -->
-<div id="deploy-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-<div class="modal-panel">
-<button class="modal-close" id="deploy-modal-close" aria-label="Close">✕</button>
-<h2>Deploy this template</h2>
-<ol>
-<li>Click <strong>Use this template</strong> (opens GitHub)</li>
-<li>Create repository from template (give it a name)</li>
-<li>In your new repo, go to <strong>Settings → Pages</strong></li>
-<li>Select branch: <code>main</code> and folder: <code>/ (root)</code>, Save</li>
-<li>Your site will be available at <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/</code></li>
-</ol>
-<p class="muted">Tip: enable GitHub Pages' Enforce HTTPS if available.</p>
-</div>
-</div>
+  <!-- Scripts -->
+  <script src="assets/script.js"></script>
 
-
-<script src="assets/script.js" defer></script>
+  <!-- Analytics (Optional) -->
+  <!--
+  <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+  -->
 </body>
 </html>
