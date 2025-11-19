@@ -1,6 +1,7 @@
 # GitHub Pages Template
 
 This is a minimal GitHub Pages static site deployed directly from the repository, where no local dev, CLI or build tools are used.
+Perfect for quickly deploying your vibe code and single html sites.
 
 ## 🚀 How to enable GitHub Pages
 
