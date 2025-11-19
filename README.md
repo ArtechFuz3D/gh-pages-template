@@ -26,6 +26,7 @@ Click the green **Use this template** button in the repo or visit:
 https://github.com/ArtechFuz3D/gh-pages-template/generate
 ```
 
+[✅](https://github.com/ArtechFuz3D/gh-pages-template/generate)
 
 Follow the modal’s quick steps to enable Pages from the repo settings.
 
