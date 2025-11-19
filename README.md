@@ -6,7 +6,7 @@ This is a minimal GitHub Pages static site deployed directly from the repository
 
 1. Go to **Settings > Pages**
 2. Under **Source**, select:
-   - **Branch:** `main`
+   - **Branch:** `main`, or your chosen branch
    - **Folder:** `/root` (if available)
 3. Save and wait for deployment.
 
