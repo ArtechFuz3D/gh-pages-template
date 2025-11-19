@@ -1,21 +1,58 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #111;
-  color: #eee;
-  text-align: center;
-  padding: 50px;
+:root {
+  --bg: #0f0f0f;
+  --fg: #eaeaea;
+  --accent: #4a8cff;
+  --accent-hover: #3370e2;
+  --radius: 10px;
+  --font: 'Inter', Arial, sans-serif;
 }
 
-button {
-  padding: 12px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  background: #4a8cff;
-  color: #fff;
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  text-align: center;
 }
-button:hover {
-  background: #2f67d0;
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+main {
+  margin-top: 40px;
+}
+
+button, .deploy-btn {
+  padding: 14px 22px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  display: inline-block;
+  margin: 12px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+button:hover, .deploy-btn:hover {
+  background: var(--accent-hover);
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-hover);
 }
