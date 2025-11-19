@@ -1,15 +1,52 @@
-# GitHub Pages Template
+# 🚀 GitHub Pages Template
 
-This is a minimal GitHub Pages static site deployed directly from the repository, where no local dev, CLI or build tools are used.
-Perfect for quickly deploying your vibe code and single html sites.
+A clean starter project for building static websites hosted with **GitHub Pages** — no terminal, build tools, or frameworks required.
 
-## 🚀 How to enable GitHub Pages
+---
 
-1. Go to **Settings > Pages**
-2. Under **Source**, select:
-   - **Branch:** `main`, or your chosen branch
-   - **Folder:** `/root` (if available)
-3. Save and wait for deployment.
+## 🔧 Deploy Your Own
 
-Your site will appear at:  
-`https://<your-username>.github.io/<repo-name>/`
+Click below to create your own repo from this template:
+
+➡ **https://github.com/ArtechFuz3D/gh-pages-template/generate**
+
+---
+
+## 📦 Install / Use
+
+1. Copy or duplicate this repository  
+2. Go to: **Settings → Pages**
+3. Select:
+
+- **Branch:** `main`
+- **Folder:** `/root`
+
+Save and wait 10–60 seconds.
+
+Your site will appear at:
+https://<username>.github.io/<repo>
+
+
+---
+
+## 🧱 Files Included
+
+| File | Purpose |
+|------|---------|
+| `index.html` | Main webpage |
+| `assets/style.css` | Stylesheet |
+| `assets/script.js` | JavaScript |
+| `404.html` | Custom error page |
+| `README.md` | Documentation |
+
+---
+
+## 🛠 Customize
+
+Feel free to edit HTML, update styling, add JS, or integrate themes.
+
+---
+
+## License
+
+MIT — free to use and remix.
