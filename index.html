@@ -3,34 +3,292 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>GH Pages Starter Template</title>
-
-  <!-- SEO -->
   <meta name="description" content="Modern GitHub Pages starter with dark/light mode, modular UI, parallax hero, analytics, and one-click deploy.">
   <link rel="canonical" href="https://artechfuz3d.github.io/gh-pages-template/" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="GH Pages Starter Template" />
   <meta property="og:description" content="Deploy a modern GitHub Pages site with one click." />
   <meta property="og:url" content="https://artechfuz3d.github.io/gh-pages-template/" />
   <meta property="og:image" content="assets/og-image.png" />
   <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="assets/og-image.png" />
-
-  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <style>
+    :root {
+      --bg: #0a0e27;
+      --surface: #1a1f3a;
+      --muted: #94a3b8;
+      --text: #f1f5f9;
+      --accent: #3b82f6;
+      --glass: rgba(255,255,255,0.05);
+      --shadow: 0 8px 24px rgba(0,0,0,0.3);
+      --container: 1200px;
+    }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/style.css" />
+    html[data-theme="light"] {
+      --bg: #f7fafc;
+      --surface: #ffffff;
+      --muted: #475569;
+      --text: #0b1220;
+      --accent: #2563eb;
+      --glass: rgba(2,6,23,0.03);
+      --shadow: 0 8px 24px rgba(16,24,40,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, var(--bg), #071029);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Navbar */
+    nav.navbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: linear-gradient(0deg, rgba(0,0,0,0.25), transparent);
+      backdrop-filter: saturate(140%) blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+    }
+
+    .nav-brand {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: var(--glass);
+    }
+
+    #theme-toggle {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    #theme-toggle:hover {
+      background: var(--glass);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--glass);
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg, var(--accent), #6dd3ff);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn.secondary {
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn.secondary:hover {
+      background: var(--glass);
+    }
+
+    /* Hero */
+    header.hero {
+      position: relative;
+      padding: 84px 20px 120px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 56px);
+      margin: 0 0 12px;
+      line-height: 1.02;
+    }
+
+    .hero p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-content > a {
+      margin: 0 8px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 30%, rgba(74, 140, 255, 0.06), transparent 8%), 
+                        radial-gradient(circle at 80% 70%, rgba(109, 211, 255, 0.04), transparent 12%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Sections */
+    section.section {
+      padding: 60px 20px;
+      max-width: var(--container);
+      margin: 0 auto;
+    }
+
+    section.section h2 {
+      font-size: 36px;
+      margin: 0 0 30px;
+    }
+
+    section.alt {
+      background: var(--surface);
+      margin: 40px 0;
+      border-radius: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .feature-list li {
+      padding: 16px;
+      background: var(--glass);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    section.alt ol {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    section.alt li {
+      counter-increment: step-counter;
+      padding: 16px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 12px;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    section.alt li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    /* Footer */
+    footer.footer {
+      padding: 36px 20px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      nav.navbar {
+        padding: 10px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      header.hero {
+        padding: 64px 16px 84px;
+      }
+
+      section.section {
+        padding: 40px 16px;
+      }
+    }
+
+    a {
+      color: var(--accent);
+    }
+  </style>
 </head>
-
 <body>
-
-  <!-- ░█▀█░█▀█░█░░░█▀█░▀█▀░█▀█░█▀▀ -->
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-brand">🚀 GH Pages Template</div>
@@ -42,25 +300,20 @@
     </div>
   </nav>
 
-
-  <!-- ░█░█░▀█▀░█▀█░█▀▀░▀█▀░█▀█░█░░ -->
   <!-- Hero -->
-  <header class="hero" data-parallax>
+  <header class="hero">
     <div class="hero-content">
       <h1>Build. Deploy. Customize.</h1>
-      <p>A clean GitHub Pages starter with theme toggle, modular components, analytics & SEO automation. FUCK AI</p>
+      <p>A clean GitHub Pages starter with theme toggle, modular components, analytics & SEO automation.</p>
       
       <a href="https://github.com/new?template_name=gh-pages-template&template_owner=ArtechFuz3D&name=my-site"
          class="btn primary" target="_blank">
          ✨ Deploy Your Own
       </a>
-
       <a href="#features" class="btn secondary">↓ Learn More</a>
     </div>
   </header>
 
-
-  <!-- ░█▀█░█▀▀░█░█░█▀▀░▀█▀░█▀▀░█▀█ -->
   <!-- Features Section -->
   <section id="features" class="section">
     <h2>Features</h2>
@@ -74,33 +327,66 @@
     </ul>
   </section>
 
-
-  <!-- ░█▀█░█▀▀░█▄█░█▀█░█▄█ -->
   <!-- Getting Started -->
   <section id="setup" class="section alt">
     <h2>Getting Started</h2>
     <ol>
-      <li>Click <strong>“Deploy Your Own”</strong></li>
+      <li>Click <strong>"Deploy Your Own"</strong></li>
       <li>Name your repo</li>
       <li>Go to <strong>Settings → Pages</strong></li>
       <li>Enable <strong>Main Branch</strong></li>
     </ol>
   </section>
 
-
-  <!-- ░█▀█░█▀▀░█▀▀░█▀█░█▀▀░▀█▀ -->
   <!-- Footer -->
   <footer id="footer" class="footer">
     <p>© <span id="year"></span> GH Pages Starter — Built by ArtechFuz3D</p>
   </footer>
 
+  <script>
+    const THEME_KEY = 'theme-pref';
 
-  <!-- Scripts -->
-  <script src="/assets/script.js"></script>
+    function getStoredTheme() {
+      return localStorage.getItem(THEME_KEY);
+    }
 
-  <!-- Analytics (Optional) -->
-  <!--
-  <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
-  -->
+    function isSystemDark() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) toggle.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'light' ? 'dark' : 'light';
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+    }
+
+    function setYear() {
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear();
+    }
+
+    function init() {
+      const stored = getStoredTheme();
+      const theme = stored || (isSystemDark() ? 'dark' : 'light');
+      applyTheme(theme);
+      setYear();
+
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) toggle.addEventListener('click', toggleTheme);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
 </body>
 </html>
