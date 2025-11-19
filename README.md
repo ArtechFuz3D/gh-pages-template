@@ -10,7 +10,6 @@ Click below to create your own repo from this template:
 
 ➡ **https://github.com/ArtechFuz3D/gh-pages-template/generate**
 
-https://github.com/ArtechFuz3D/gh-pages-template/generate
 ---
 
 ## 📦 Install / Use
