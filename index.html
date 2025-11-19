@@ -1,53 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GitHub Pages Template</title>
-  <meta name="description" content="A clean minimal GitHub Pages starter template. Deploy instantly — no CLI or build tools." />
+<!doctype html>
+<!-- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date());
+gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+-->
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="GitHub Pages Template" />
-  <meta property="og:description" content="Deploy a website instantly using GitHub Pages — no CLI required." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://artechfuz3d.github.io/gh-pages-template/" />
-  <meta property="og:image" content="assets/cover.png" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GitHub Pages Template" />
-  <meta name="twitter:description" content="Deploy instantly — no terminal or frameworks needed." />
-  <meta name="twitter:image" content="assets/cover.png" />
-
-  <!-- Icons -->
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+<!-- App root -->
+<div id="app">
+<!-- Navbar injected here -->
+<header id="site-header"></header>
 
-  <header>
-    <h1>🚀 GitHub Pages Starter Template</h1>
-    <p>A lightweight, customizable starting point for building static websites.</p>
-  </header>
 
-  <main>
-    <button id="btn">Test Button</button>
+<!-- Hero -->
+<section id="hero" class="hero">
+<div class="hero-inner">
+<h1 id="hero-title">Build fast — deploy instantly</h1>
+<p id="hero-sub">A lightweight GitHub Pages starter with dark/light theme, modular components, and a modern hero.</p>
+<div class="hero-cta">
+<a class="btn primary" id="use-template" href="https://github.com/ArtechFuz3D/gh-pages-template/generate" target="_blank" rel="noopener noreferrer">Use this template</a>
+<button class="btn" id="deploy-modal-open">How to deploy</button>
+</div>
+</div>
+<div class="hero-decor" aria-hidden="true"></div>
+</section>
 
-    <a class="deploy-btn" 
-       href="https://github.com/ArtechFuz3D/gh-pages-template/generate" 
-       target="_blank" 
-       rel="noopener noreferrer">
-      🔧 Use This Template
-    </a>
-  </main>
 
-  <footer>
-    <p>© <span id="year"></span> Made by <a href="https://github.com/ArtechFuz3D" target="_blank">ArtechFuz3D</a></p>
-  </footer>
+<!-- Main content (sections injected) -->
+<main id="main-content" class="container">
+<!-- Sections are inserted by JS. See assets/script.js for the modular components and how to add more. -->
+</main>
 
-  <script src="assets/script.js"></script>
+
+<!-- Footer injected here -->
+<footer id="site-footer"></footer>
+
+
+</div>
+
+
+<!-- Deploy modal -->
+<div id="deploy-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+<div class="modal-panel">
+<button class="modal-close" id="deploy-modal-close" aria-label="Close">✕</button>
+<h2>Deploy this template</h2>
+<ol>
+<li>Click <strong>Use this template</strong> (opens GitHub)</li>
+<li>Create repository from template (give it a name)</li>
+<li>In your new repo, go to <strong>Settings → Pages</strong></li>
+<li>Select branch: <code>main</code> and folder: <code>/ (root)</code>, Save</li>
+<li>Your site will be available at <code>https://&lt;username&gt;.github.io/&lt;repo&gt;/</code></li>
+</ol>
+<p class="muted">Tip: enable GitHub Pages' Enforce HTTPS if available.</p>
+</div>
+</div>
+
+
+<script src="assets/script.js" defer></script>
 </body>
 </html>
